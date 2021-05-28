@@ -1,0 +1,72 @@
+<div
+  class="container h-100 d-flex justify-content-center align-items-center"
+  dir="rtl"
+>
+  <div *ngIf="!showLoginPage" class="w-100 d-flex flex-column">
+    <mat-toolbar
+      class="d-flex justify-content-between bg-light"
+      style="background: #fafafa; filter: drop-shadow(0 0 1px #aaa)"
+    >
+      <h2>Chat room</h2>
+    </mat-toolbar>
+
+    <div class="w-100">
+      <mat-card class="col-3 p-2 bg-light">
+        <div *ngFor="let user of userList">
+          <app-user [user]="user"></app-user>
+        </div>
+      </mat-card>
+      <mat-card fxFlex="col-9 p-2">
+        <mat-card-content
+          #chats
+          fxFlexFill
+          style="max-height: 500px; overflow-x: hidden; overflow-y: auto"
+        >
+          <mat-list *ngFor="let msg of messageList.value">
+            <app-post class="overflow-hidden" [message]="msg"></app-post>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <mat-toolbar
+      class="p-2 bg-light"
+      style="filter: drop-shadow(0 0 1px #aaa); height: auto"
+      fxLayout
+      fxLayoutAlign="center"
+    >
+      <app-textarea
+        class="w-75 m-4"
+        label="{{ username.value + ' :' }}"
+        id="textarea"
+        [formControl]="message"
+        rows="6"
+        [maxcounter]="255"
+        (keyup.enter)="sendMessage()"
+      ></app-textarea>
+    </mat-toolbar>
+  </div>
+
+  <div
+    *ngIf="showLoginPage"
+    class="
+      w-100
+      h-100
+      bg-primary
+      fixed-top
+      d-flex
+      justify-content-center
+      align-items-center
+    "
+  >
+    <app-input
+      appearance="standard"
+      class="row col-12 col-sm-10 col-md-7 col-lg-4"
+      [formControl]="username"
+      label="نام کاربری"
+      (keyup.enter)="login()"
+    ></app-input>
+    <button mat-flat-button (click)="login()">
+      <span class="material-icons"> login </span>ورود
+    </button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="w-100 px-4 m-2">
+  <mat-chip-list class="d-flex" [ngClass]="message.sender ? null : 'listen'">
+    {{
+      message.sender
+        ? ["شما - ( ", message.username, " )"].join("")
+        : message.username
+    }}:
+    <mat-chip color="primary">{{ date(message.date) }}</mat-chip>
+  </mat-chip-list>
+  <div [ngClass]="message.sender ? 'sender' : 'listener'">
+    <div>{{ message.message }}</div>
+  </div>
+</div>

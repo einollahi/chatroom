@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2")
+      format("woff2"),
+    url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff")
+      format("woff"),
+    url("../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf")
+      format("ttf");
+}
+
+.material-icons {
+  font-family: "Material Icons" !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  margin-right: 0.3rem;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.material-icons.md-12 {
+  font-size: 12px;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+.mat-form-field-infix {
+  width: 100%;
+  font-size: large;
+}
+.mat-form-field-invalid {
+  display: flex;
+}
+
+// radio btn
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #17a2b8;
+}
+span.mat-radio-inner-circle {
+  background: #17a2b8 !important;
+}
+button.mat-focus-indicator {
+  outline: none;
+}
+button.mat-focus-indicator.mat-icon-button {
+  outline: none;
+}
+
+mat-expansion-panel-header {
+  background: #17a3b88e;
+}
+
+.mat-table {
+  width: 100%;
+}
+.mat-paginator-page-size.ng-star-inserted {
+  direction: ltr;
+}
